@@ -16,10 +16,12 @@ function FaviconsWebpackPlugin (options) {
     emitStats: false,
     statsFilename: 'iconstats-[hash].json',
     persistentCache: true,
-    inject: true,
-    background: '#fff'
+    inject: true
   }, options);
-  this.options.icons = _.extend({
+  // Make sure we have a generator object.
+  this.options.generator = _.extend({}, this.options.generator);
+  // Set our defaults for generator icons.
+  this.options.generator.icons = _.extend({
     android: true,
     appleIcon: true,
     appleStartup: true,
@@ -30,7 +32,9 @@ function FaviconsWebpackPlugin (options) {
     twitter: false,
     yandex: false,
     windows: false
-  }, this.options.icons);
+  }, this.options.icons, this.options.generator.icons);
+
+  delete this.options.icons;
 }
 
 FaviconsWebpackPlugin.prototype.apply = function (compiler) {
