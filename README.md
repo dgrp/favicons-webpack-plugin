@@ -1,6 +1,6 @@
 Favicons Webpack Plugin
 ========================================
-[![npm version](https://badge.fury.io/js/favicons-webpack-plugin.svg)](http://badge.fury.io/js/favicons-webpack-plugin) [![Dependency Status](https://david-dm.org/jantimon/favicons-webpack-plugin.svg)](https://david-dm.org/jantimon/favicons-webpack-plugin) [![Build status](https://travis-ci.org/jantimon/favicons-webpack-plugin.svg)](https://travis-ci.org/jantimon/favicons-webpack-plugin) [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/Flet/semistandard)
+[![npm version](https://badge.fury.io/gh/dgrp%2Ffavicons-webpack-plugin.svg)](https://badge.fury.io/gh/dgrp%2Ffavicons-webpack-plugin) [![Dependency Status](https://david-dm.org/dgrp/favicons-webpack-plugin.svg)](https://david-dm.org/dgrp/favicons-webpack-plugin) [![Build status](https://travis-ci.org/dgrp/favicons-webpack-plugin.svg)](https://travis-ci.org/dgrp/favicons-webpack-plugin)
 
 Allows to use the [favicons](https://github.com/haydenbleasel/favicons) generator with webpack
 
@@ -10,7 +10,7 @@ You must be running webpack on node 0.12.x or higher
 
 Install the plugin with npm:
 ```shell
-$ npm install --save-dev favicons-webpack-plugin
+$ npm install --save-dev dgrp/favicons-webpack-plugin
 ```
 
 Basic Usage
@@ -27,12 +27,12 @@ plugins: [
 ]
 ```
 
-This basic configuration will generate [37 different icons](https://github.com/jantimon/favicons-webpack-plugin/tree/master/test/fixtures/expected/default/icons-366a3768de05f9e78c392fa62b8fbb80) for iOS devices, Android devices and the Desktop browser out of your `my-logo.png` file.
-It can optionally also generate a [JSON file with all information about the icons](https://github.com/jantimon/favicons-webpack-plugin/blob/master/test/fixtures/expected/generate-html/iconstats.json) for you.
+This basic configuration will generate [37 different icons](https://github.com/dgrp/favicons-webpack-plugin/tree/master/test/fixtures/expected/default/icons-366a3768de05f9e78c392fa62b8fbb80) for iOS devices, Android devices and the Desktop browser out of your `my-logo.png` file.
+It can optionally also generate a [JSON file with all information about the icons](https://github.com/dgrp/favicons-webpack-plugin/blob/master/test/fixtures/expected/generate-html/iconstats.json) for you.
 
 If you are using with [html-webpack-plugin](https://github.com/ampedandwired/html-webpack-plugin) it will also inject the necessary html for you:
 
-https://github.com/jantimon/favicons-webpack-plugin/blob/master/test/fixtures/expected/default-with-html/index.html
+https://github.com/dgrp/favicons-webpack-plugin/blob/master/test/fixtures/expected/default-with-html/index.html
 
 ```html
   <link rel="apple-touch-icon" sizes="57x57" href="icons-366a3768de05f9e78c392fa62b8fbb80/apple-touch-icon-57x57.png">
@@ -63,23 +63,24 @@ plugins: [
     persistentCache: true,
     // Inject the html into the html-webpack-plugin
     inject: true,
-    // favicon background color (see https://github.com/haydenbleasel/favicons#usage)
-    background: '#fff',
     // favicon app title (see https://github.com/haydenbleasel/favicons#usage)
     title: 'Webpack App',
 
-    // which icons should be generated (see https://github.com/haydenbleasel/favicons#usage)
-    icons: {
-      android: true,
-      appleIcon: true,
-      appleStartup: true,
-      coast: false,
-      favicons: true,
-      firefox: true,
-      opengraph: false,
-      twitter: false,
-      yandex: false,
-      windows: false
+    // options to be passed to favicon generator (see https://github.com/haydenbleasel/favicons#usage)
+    generator: {
+      // which icons should be generated
+      icons: {
+        android: true,
+        appleIcon: true,
+        appleStartup: true,
+        coast: false,
+        favicons: true,
+        firefox: true,
+        opengraph: false,
+        twitter: false,
+        yandex: false,
+        windows: false
+      }
     }
   })
 ]
@@ -87,12 +88,12 @@ plugins: [
 
 # Changelog
 
-Take a look at the  [CHANGELOG.md](https://github.com/jantimon/favicons-webpack-plugin/tree/master/CHANGELOG.md).
+Take a look at the  [CHANGELOG.md](https://github.com/dgrp/favicons-webpack-plugin/tree/master/CHANGELOG.md).
 
 
 # Contribution
 
-You're free to contribute to this project by submitting [issues](https://github.com/jantimon/favicons-webpack-plugin/issues) and/or [pull requests](https://github.com/jantimon/favicons-webpack-plugin/pulls). This project is test-driven, so keep in mind that every change and new feature should be covered by tests.
+You're free to contribute to this project by submitting [issues](https://github.com/dgrp/favicons-webpack-plugin/issues) and/or [pull requests](https://github.com/dgrp/favicons-webpack-plugin/pulls). This project is test-driven, so keep in mind that every change and new feature should be covered by tests.
 This project uses the [semistandard code style](https://github.com/Flet/semistandard).
 
 # License
