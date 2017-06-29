@@ -2,4 +2,4 @@
 /dist/
 /example/dist/
 npm-debug.log
-/.idea/
+yarn.lock
